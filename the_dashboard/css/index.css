@@ -1,0 +1,21 @@
+#span_name{
+  color: #0787f5;
+  font-weight: bold;
+}
+#anImg{
+  margin-top: 20px;
+}
+#wellcome-Area{
+  /* margin-right: 20px !important; */
+  box-shadow:0 8px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19)
+
+}
+#guidelines li a{
+  font-family: 'segoe print';
+}
+#guidesite {
+  box-shadow:0 8px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19)
+}
+#form-page-header{
+  font-size: 25px;
+}

@@ -1,0 +1,870 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="">
+
+        <title>Startmin - Bootstrap Admin Theme</title>
+
+        <!-- Bootstrap Core CSS -->
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- MetisMenu CSS -->
+        <link href="../css/metisMenu.min.css" rel="stylesheet">
+
+        <!-- Custom CSS -->
+        <link href="../css/startmin.css" rel="stylesheet">
+        <link href="../css/index.css" rel="stylesheet">
+
+        <!-- Custom Fonts -->
+        <link href="../css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+        <style media="screen">
+          #userDiv{
+            border: 1px solid gray;
+            padding: 5px;
+            border-radius: 4px;
+          }.btn-float-right{
+            float: right;
+            margin-right: 15px;
+          }.addFav{
+            background: aqua !important;
+            font-weight: bold;
+            transform: scale(1.009);
+            font-family: sans-serif;
+            cursor: pointer;
+    }
+        </style>
+    </head>
+    <body>
+
+        <div id="wrapper">
+
+            <!-- Navigation -->
+            <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="index.html">Startmin</a>
+                </div>
+
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+
+                <ul class="nav navbar-nav navbar-left navbar-top-links">
+                    <li><a href="#"><i class="fa fa-home fa-fw"></i> Website</a></li>
+                </ul>
+
+                <ul class="nav navbar-right navbar-top-links">
+                    <li class="dropdown navbar-inverse">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                            <i class="fa fa-bell fa-fw"></i> <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu dropdown-alerts">
+                            <li>
+                                <a href="#">
+                                    <div>
+                                        <i class="fa fa-comment fa-fw"></i> New Comment
+                                        <span class="pull-right text-muted small">4 minutes ago</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <div>
+                                        <i class="fa fa-twitter fa-fw"></i> some Data
+                                        <span class="pull-right text-muted small">12 minutes ago</span>
+                                    </div>
+                                </a>
+                            </li>
+
+                            <li class="divider"></li>
+
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                            <i class="fa fa-user fa-fw"></i><span id="user">User</span>  <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu dropdown-user">
+                            <li><a href="#"><i class="fa fa-user fa-fw"></i> <span id="user_email">User Profile</span></a>
+                            </li>
+                            <li><a data-toggle="modal" data-target="#myModal"><i class="fa fa-gear fa-fw"></i> Settings</a>
+                            </li>
+                            <li class="divider"></li>
+                            <li><a href="./../../folder_login/logout.php"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                <!-- /.navbar-top-links -->
+
+                <div class="navbar-default sidebar" role="navigation">
+                    <div class="sidebar-nav navbar-collapse">
+                        <ul class="nav" id="side-menu">
+                            <li class="sidebar-search">
+                                <div class="input-group custom-search-form">
+                                    <input type="text" class="form-control" placeholder="Search...">
+                                    <span class="input-group-btn">
+                                        <button class="btn btn-primary" type="button">
+                                            <i class="fa fa-search"></i>
+                                        </button>
+                                </span>
+                                </div>
+                                <!-- /input-group -->
+                            </li>
+                            <li>
+                                <a href="index.html"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+                            </li>
+                            <li>
+                                <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Charts<span class="fa arrow"></span></a>
+                                <ul class="nav nav-second-level">
+
+                                  <li>
+                                      <a href="morris.html">Graphs</a>
+                                  </li>
+
+                                </ul>
+                                <!-- /.nav-second-level -->
+                            </li>
+                            <li>
+                                <a href="tables.html"><i class="fa fa-table fa-fw"></i>  Nutrition Information</a>
+                            </li>
+                            <li>
+                                <a href="forms.html"><i class="fa fa-edit fa-fw"></i> Recomendations</a>
+                            </li>
+
+                        </ul>
+                    </div>
+                    <!-- /.sidebar-collapse -->
+                </div>
+                <!-- /.navbar-static-side -->
+            </nav>
+
+            <div id="page-wrapper">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="page-header"><span id="form-page-header" > Forms </span>
+                          <div class="btn-float-right">
+                            <div class="btn ">
+                              <div class="btn btn-success"> Health Status: <span id="healthstatus" style="color: #2824f9;background: aliceblue; padding: 8px;"> Health will show here</span>  </div>
+                            </div>
+                            <button id="changeDetails-btn"  class="btn btn-input btn-success" data-toggle="modal" data-target="#myModal-change-details" type="button" name="changeDetails">Change Details</button>
+                          </div>
+                       </div>
+                    </div>
+                    <!-- /.col-lg-12 -->
+
+                </div>
+                <!-- /.row -->
+                <div class="row">
+                    <div class="col-lg-6" id="userDiv">
+                        <div class="text-align">
+                          <h2 class="text-align" >Enter Your Details</h2>
+                        </div>
+                        <form class="form"  method="post" id="formUser">
+                          <label for="">Name</label>
+                          <div class="form-group input-group">
+                              <span class="input-group-addon">@</span>
+                              <input type="text" name="name" id="name_pref" class="form-control" placeholder="Enter Your Name">
+                          </div>
+                          <label for="">Age</label>
+                          <div class="form-group input-group">
+                              <span class="input-group-addon">@</span>
+                              <input type="number" name="age" class="form-control" placeholder="Enter Your Age" >
+                          </div>
+                          <label for="">Height</label>
+                          <div class="form-group input-group">
+                              <span class="input-group-addon">@</span>
+                              <input type="text" name="height" class="form-control" placeholder="Enter Your Height(metres)" >
+                          </div>
+                          <label for="">Weight</label>
+                          <div class="form-group input-group">
+                              <span class="input-group-addon">@</span>
+                              <input type="text" name="weight" class="form-control" placeholder="Enter Your Weight(kg)">
+                          </div>
+                          <label for="">Activity</label>
+                          <div class="form-group input-group">
+                              <span class="input-group-addon">@</span>
+                              <select class="form-control" name="activity" id="">
+                                <option  disabled selected>Choose Action</option>
+                                <option value="sedentary">sedentary</option>
+                                <option value="moderate_activity">Moderate</option>
+                                <option value="light_activity">Light Activity</option>
+                                <option value="extra_active">Extra Active</option>
+                                <option value="very_active">Very Active</option>
+                              </select>
+                          </div>
+                          <label for="">Goals</label>
+                          <div class="form-group input-group">
+                              <span class="input-group-addon">@</span>
+                              <select class="form-control" name="goals" id="">
+                                <option  disabled selected>Choose Action</option>
+                                <option value="fat_loss">Fat Loss</option>
+                                <option value="maintenance">Maintenance</option>
+                                <option value="bodyBuilding">Body Building</option>
+                              </select>
+                          </div>
+                          <label for="">Location</label>
+                          <div class="form-group input-group">
+                              <span class="input-group-addon">@</span>
+                              <input type="text" name="Location" class="form-control" placeholder="Enter Your location">
+                          </div>
+                          <label for="">Gender</label>
+                          <div class="form-group input-group">
+                              <span class="input-group-addon">@</span>
+                              <select class="form-control" name="gender" id="">
+                                <option  disabled selected>Choose Action</option>
+                                <option value="male">male</option>
+                                <option value="female">Female</option>
+                              </select>
+                          </div>
+                            <input type="hidden" name="user_id" id="form_user_id" value="">
+                          <div class="btn-float-right">
+                            <input type="submit" class="btn btn-input btn-success" value="Send">
+                          </div>
+                        </form>
+                    </div>
+                    <!-- /.col-lg-12 -->
+                </div>
+                <!-- /.row -->
+                <p> <br> </p>
+
+                <!-- preferences, Suggested and Favorite Meals -->
+                <div class="row theTables" id="pref-and-suggested">
+                  <div class="col-md-12  col-sm-12  col-xs-12" id="favorite">
+                    <!-- Panel -->
+                     <div class="panel panel-default">
+                       <div class="panel-heading">Recomended Meals</div>
+                       <div class="panel-body">
+                         <!-- Data Tables -->
+                                 <div class="dataTable_wrapper">
+                                     <table class="table table-striped table-bordered table-hover dataTables-example2" id="'favorite'">
+                                         <thead>
+                                             <tr>
+                                                 <th>Name </th>
+                                                 <th>Take Meal At: </th>
+                                                 <th>Carbohydrates </th>
+                                                 <th>requiredCarbs </th>
+                                                 <th>Protein </th>
+                                                 <th>requiredProtein </th>
+                                                 <th>Fat </th>
+                                                 <th>requiredFat </th>
+                                             </tr>
+                                         </thead>
+                                         <tbody id="fav-dataTables">
+
+                                         </tbody>
+                                     </table>
+                                 </div>
+                         <!-- End of Data Tables -->
+                       </div>
+                    </div>
+                    <!-- End Of Panel -->
+                  </div>
+                  <div class="col-md-12  col-sm-12  col-xs-12 " id="Suggested">
+                    <div class="well">
+                        <p>Your preferences will appear here once you select what you want in the Recomended meals</p>
+                        <p><i> if the food isnt in <a href="#favorite">Recomended meals Page</a> here, Go to <a href="tables.html">Nutrition Information Page</a> and add the food you want to Recomended meals </i> </p>
+                   </div>
+                   <!-- Panel -->
+                    <div class="panel panel-default">
+                      <div class="panel-heading">Preferred Meals</div>
+                      <div class="panel-body">
+                        <!-- Data Tables -->
+                                <div class="dataTable_wrapper">
+                                    <table class="table table-striped table-bordered table-hover dataTables-example2" id="'Suggested-dataTables'">
+                                        <thead>
+                                            <tr>
+                                                <th>Name </th>
+                                                <th>Take Meal At: </th>
+                                                <th>Calories </th>
+                                                <th>Carbohydrates </th>
+                                                <th>requiredCarbs </th>
+                                                <th>Protein </th>
+                                                <th>requiredProtein </th>
+                                                <th>Fat </th>
+                                                <th>requiredFat </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="Suggested-dataTables">
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                        <!-- End of Data Tables -->
+                      </div>
+                   </div>
+                   <!-- End Of Panel -->
+                  </div>
+                  <div class="col-md-7  col-sm-8  col-xs-12" id="preferences">
+                    <!-- Panel -->
+                     <div class="panel panel-default" style="display:none">
+                       <div class="panel-heading">Preferred  Meals</div>
+                       <div class="panel-body">
+                         <!-- Data Tables -->
+                                 <div class="dataTable_wrapper">
+                                     <table class="table table-striped table-bordered table-hover dataTables-example2" id="'pref-dataTables'">
+                                         <thead>
+                                             <tr>
+                                                 <th>Name </th>
+                                                 <th>Take Meal At: </th>
+                                                 <th>Calories </th>
+                                                 <th>Carbohydrates </th>
+                                                 <th>requiredCarbs </th>
+                                                 <th>Protein </th>
+                                                 <th>requiredProtein </th>
+                                                 <th>Fat </th>
+                                                 <th>requiredFat </th>
+                                             </tr>
+                                         </thead>
+                                         <tbody id="pref-dataTables">
+
+                                         </tbody>
+                                     </table>
+                                 </div>
+                         <!-- End of Data Tables -->
+                       </div>
+                    </div>
+                    <!-- End Of Panel -->
+                  </div><br><br>
+                </div>
+                <!-- End of preferences, Suggested and Favorite Meals -->
+
+            </div>
+            <!-- /#page-wrapper -->
+
+        </div>
+        <!-- /#wrapper -->
+
+        <!-- Modal Settings -->
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title" id="myModalLabel">Update Account</h4>
+                    </div>
+                    <div class="modal-body">
+
+                            <!-- Form Begins -->
+                           <form class=""  method="post" id="updateSettings">
+                               <label>Chage Your Image</label>
+                               <div class="form-group input-group">
+                                   <span class="input-group-addon">@</span>
+                               <input type="file" name="user_img" class="form-control" >
+                               </div>
+                               <label>Chage UserName</label>
+                               <div class="form-group input-group">
+                                   <span class="input-group-addon">@</span>
+                               <input type="text" name="UserName" class="form-control" placeholder="Enter Your UserName">
+                               </div>
+                               <label>Chage Email</label>
+                               <div class="form-group input-group">
+                                   <span class="input-group-addon">@</span>
+                               <input type="email" name="email" class="form-control" placeholder="Enter Your Email">
+                               </div>
+                               <label>Chage Password</label>
+                               <div class="form-group input-group">
+                                   <span class="input-group-addon">@</span>
+                               <input type="password" name="user_password" class="form-control" placeholder="Enter Your Password">
+                               </div>
+                               <label>Confirm Password</label>
+                               <div class="form-group input-group">
+                                   <span class="input-group-addon">@</span>
+                               <input type="password" name="user_password2" class="form-control" placeholder="Enter Your Password">
+                               </div>
+                               <div class="modal-footer">
+                                 <button type="submit" class="btn btn-primary">Save changes</button>
+                               </div>
+                             </form>
+                             <!-- Form Ends -->
+
+                             <!-- ul>li*5>a.hour -->
+                           </div>
+                           <div class="modal-footer">
+                             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                           </div>
+                         </div>
+                         <!-- /.modal-content -->
+                       </div>
+                       <!-- /.modal-dialog -->
+                     </div>
+                     <!--  Modal Settings End -->
+
+                      <!-- Modal  Change-Details Starts -->
+                      <div class="modal fade" id="myModal-change-details" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                          <div class="modal-dialog">
+                              <div class="modal-content">
+                                  <div class="modal-header">
+                                      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                      <h4 class="modal-title" id="myModalLabel">Change Your Details</h4>
+                                  </div>
+                                  <div class="modal-body">
+                                          <!-- Form Begins -->
+                                        <form class=""  method="post">
+                                            <label>Weight</label>
+                                            <div class="form-group input-group">
+                                                <span class="input-group-addon">@</span>
+                                                <input type="number" name="changeWeight" class="form-control" placeholder="Enter Your Weight">
+                                            </div>
+                                            <label>Height</label>
+                                            <div class="form-group input-group">
+                                                <span class="input-group-addon">@</span>
+                                                <input type="number" name="changeHeight" class="form-control" placeholder="Enter Your Height">
+                                            </div>
+                                            <label>Age</label>
+                                            <div class="form-group input-group">
+                                                <span class="input-group-addon">@</span>
+                                                <input type="number" name="changeAge" class="form-control" placeholder="Enter Your Age">
+                                            </div>
+                                            <label>Location</label>
+                                            <div class="form-group input-group">
+                                                <span class="input-group-addon">@</span>
+                                                <input type="text" name="changeLocation" class="form-control" placeholder="Enter Your Location">
+                                            </div>
+                                              <div class="modal-footer">
+                                                  <button type="submit" class="btn btn-primary">Save changes</button>
+                                              </div>
+                                          </form> <!-- Form Ends -->
+                                  </div>
+                                  <div class="modal-footer">
+                                      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                  </div>
+                              </div>
+                              <!-- /.modal-content -->
+                          </div>
+                          <!-- /.modal-dialog -->
+                      </div>
+        <!-- Modal Ends Finally -->
+
+        <!-- jQuery -->
+        <script src="../js/jquery.min.js"></script>
+
+        <!-- Bootstrap Core JavaScript -->
+        <script src="../js/bootstrap.min.js"></script>
+
+        <!-- Metis Menu Plugin JavaScript -->
+        <script src="../js/metisMenu.min.js"></script>
+
+        <!-- DataTables JavaScript -->
+      <script src="../js/dataTables/jquery.dataTables.min.js"></script>
+      <script src="../js/dataTables/dataTables.bootstrap.min.js"></script>
+
+        <!-- Custom Theme JavaScript -->
+        <script src="../js/startmin.js"></script>
+        <script type="text/javascript">
+        // Add scrollspy to <body>
+         $('body').scrollspy({target: ".theTables", offset: 50});
+         // Add smooth scrolling on all links inside the navbar
+          $(".theTables a").on('click', function(event) {
+            // Make sure this.hash has a value before overriding default behavior
+            if (this.hash !== "") {
+              // Prevent default anchor click behavior
+              event.preventDefault();
+              // Store hash
+              var hash = this.hash;
+              // Using jQuery's animate() method to add smooth page scroll
+              // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+              $('html, body').animate({
+                scrollTop: $(hash).offset().top
+              }, 800, function(){
+                // Add hash (#) to URL when done scrolling (default click behavior)
+                window.location.hash = hash;
+              });
+            }  // End if
+          });
+
+        // If User is undefined
+        if(localStorage.username==undefined){
+          window.location="../../folder_login/login.php"
+        }
+        // Capitalize
+        function charOneToUpper(s){
+          let y = s.charAt(0).toUpperCase();
+          let z = s.replace(s.charAt(0), y)
+          return z;
+        }
+
+        //  Constant Variables
+        const user = charOneToUpper(localStorage.username);
+        const user_email = localStorage.user_email;
+        const user_image = localStorage.user_image;
+        const user_id = localStorage.user_id;
+        // const bmi;
+
+          const array_food = [];
+          const array_food_To_Eat = [];
+          const suggested_array = [];
+          // var arraynew;
+
+        $("#name_pref").val(user);
+        $("#user").html(user);
+        $("#user_email").html(user_email);
+        $("#form_user_id").val(user_id);
+
+        function range(min, max) {
+          return Math.floor(Math.random() * (max - min+1) + min);
+        }
+
+
+
+// ideal WEight => ((0.5*bmi) + 11.5 )*height-sqrd
+          $("#formUser").submit(function(e){
+            e.preventDefault()
+            submitUser();
+          })
+
+          function submitUser() {
+            // alert()
+            $.ajax({
+              url:'php/submitUser.php',
+              method:'post',
+              data:$("#formUser").serialize(),
+              success:function (data) {
+                // console.log(data);
+                $("#formUser")[0].reset();
+              },error:function (data) { alert(data); }
+            })
+          }
+
+          // Get User Database
+          $.ajax({
+              url: 'php/preferences.php ',
+              method: 'post',
+              // data: $(`# `).serialize(),
+              success: function(data){
+                data = JSON.parse(data)
+                console.log(data);
+
+                $("#changeDetails-btn").css({"display":"none"});
+                $("#favorite").css({"display":"none"});
+                $.each(data[4], function (i, val) {
+                        val.height = parseFloat(val.height)*39.4;
+                        val.weight = parseFloat(val.weight)*2.205;
+                        val.age = parseInt(val.age)
+                        if (user_id == val.user_id) {
+                         const bmi = val.bmi;
+                         var calories_used = 0;
+                          if (val.gender == 'male') {
+                              const BMR  = (((12.7*val.height)+(6.23*val.weight))-(6.8*val.age))+66;
+                              if (val.activity == 'sedentary') {
+                                  calories_used = BMR * 1.2;
+                              }else if (val.activity == 'light_activity') {
+                                calories_used = BMR * 1.375;
+                              }else if (val.activity == 'moderate_activity') {
+                                calories_used = BMR * 1.55;
+                              }else if (val.activity == 'very_active') {
+                                calories_used = BMR * 1.725;
+                              }else if (val.activity == 'extra_active') {
+                                calories_used = BMR * 1.9;
+                              }
+                          }else if (val.gender == 'female') {
+                            var  BMR  = (((4.7*val.height)+(4.35*val.weight))-(4.7*val.age))+65.5;
+                            if (val.activity == 'sedentary') {
+                                calories_used = BMR * 1.2;
+                            }else if (val.activity == 'light_activity') {
+                              calories_used = BMR * 1.375;
+                            }else if (val.activity == 'moderate_activity') {
+                              calories_used = BMR * 1.55;
+                            }else if (val.activity == 'very_active') {
+                              calories_used = BMR * 1.725;
+                            }else if (val.activity == 'extra_active') {
+                              calories_used = BMR * 1.9;
+                            }
+                          }
+                          function BmiAnalysis(bmi){
+                            if (bmi < 17.5){
+                              var health = "Severe Malnutrition";
+                              return  health;
+                            }else if (bmi > 18 && bmi<26) {
+                              var health = "Good Health";
+                              return health;
+                            }else if (bmi >25 && bmi<30) {
+                              var health = "Overweight ";
+                              return health;
+                            }else if (bmi >29 && bmi<41) {
+                              var health ="Obese";
+                              return  health;
+                            }else if (bmi>40){
+                              var health = "Morbidly Obese";
+                              return  health;
+                            }else{
+                              var health = "Undetermined";
+                              return health;
+                            }
+                          }
+                          function liesBtn(a, b){
+                            y =  ( parseInt(a) <= (b +20)) && ( parseInt(a) >= (b -20));
+                            if (y = true) {
+                                return a;
+                            }else{
+                              return false;
+                            };
+                          }
+                          fitness_Goals = function (goals) {
+                            var carbs_per_day;
+                            var protein_per_day;
+                            var fat_per_day;
+
+                            if (goals  == "maintenance") {
+                              //  for Body Maintaine - Moderate carb
+                              // 30-50% carbohydrates
+                              // 25-35% protein
+                              // 25-35% fat
+                              var carbs_needed = range(30, 50);
+                              var protein_needed = range(25, 35);
+                              var fat_needed = range(25, 35);
+                              return {
+                                carbs_needed : carbs_needed,
+                                protein_needed : protein_needed,
+                                fat_needed : fat_needed
+                                };
+                            }else if (goals  == "fat_loss") {
+                              //  for fat loss - lower carb
+                              // 10-30% carbohydrates
+                              // 40-50% protein
+                              // 30-40% fat
+                              var carbs_needed = range(10, 30);
+                              var protein_needed = range(40, 50);
+                              var fat_needed = range(30, 40);
+                              return {
+                                carbs_needed : carbs_needed,
+                                protein_needed : protein_needed,
+                                fat_needed : fat_needed
+                                };
+
+                            }else if (goals  == "bodyBuilding") {
+                              //  for Body Building - Higher carb
+                              // 40-60% carbohydrates
+                              // 25-35% protein
+                              // 15-25% fat
+                              var carbs_needed = range(40, 60);
+                              var protein_needed = range(25,35);
+                              var fat_needed = range(15, 25);
+                              return {
+                                carbs_needed : carbs_needed,
+                                protein_needed : protein_needed,
+                                fat_needed : fat_needed
+                                };
+
+                            }
+                          }
+
+
+                                    // TODO: how to change goals -- mantainence etc
+                                    // console.log(val.goals);
+                                fitness = new fitness_Goals(val.goals);
+                                carbs_needed = parseInt(fitness.carbs_needed);
+                                protein_needed =parseInt(fitness.protein_needed);
+                                fat_needed = parseInt(fitness.fat_needed);
+                                // console.log(carbs_needed);
+                                // console.log("carls");
+                                // console.log(calories_used);
+                                carbs      = Math.ceil( ((carbs_needed/100)*calories_used)/4);
+                                protein      = Math.ceil( ((protein_needed/100)*calories_used)/4);
+                                fat      = Math.ceil( ((fat_needed/100)*calories_used)/9);
+                                // console.log("carbs "+carbs);
+                                // console.log("protein "+protein);
+                          // console.log(fat);
+
+                          $("#healthstatus").html(BmiAnalysis(parseInt(val.bmi)));
+                          $("#changeDetails-btn").show();
+                          $("#userDiv").css({"display":"none"});
+                          $("#favorite").show();
+                          var array_food_id = 0;
+                          $.each(data[5], function (i,val1) {
+                            if (val1.fruits == 0) {
+                              if (val1.meat == 0) {
+                                if (val1.dairy ==0) {
+                                  $.each(data[1], function (j, val_cereals) {
+                                    if (val1.cereals == val_cereals.id) {
+                                      array_food.push({id:array_food_id, meal_at:val1.time_of_day, name:val_cereals.name, carbs:val_cereals.carbohydrates, protein:val_cereals.protein, fat:val_cereals.fats,  calories:val_cereals.Total_Calories, requiredCarbs:carbs, requiredProtein:protein, requiredFat:fat, goals:val.goals});
+                                    // array_food_To_Eat.push({meal_at1:val1.time_of_day,  name1:val_cereals.name, carbs1:carbs, protein1:protein,  fat1:fat});
+                                    }
+                                  })
+                                }else {
+                                  $.each(data[0], function (f, val_dairy) {
+                                    if (val1.dairy == val_dairy.id) {
+                                      array_food.push({id:array_food_id, meal_at:val1.time_of_day, name:val_dairy.name, carbs:val_dairy.carbohydrates, protein:val_dairy.protein, fat:val_dairy.fats,  calories:val_dairy.Total_Calories, requiredCarbs:carbs, requiredProtein:protein, requiredFat:fat, goals:val.goals})
+                                      // array_food_To_Eat.push({meal_at1:val1.time_of_day,  name1:val_dairy.name, carbs1:carbs,  protein1:protein,  fat1:fat });
+                                    }
+                                  })
+                                }
+                              }else {
+                                $.each(data[2], function (f, val_meat) {
+                                  if (val1.meat == val_meat.id) {
+                                    array_food.push({id:array_food_id, meal_at:val1.time_of_day, name:val_meat.name, carbs:val_meat.carbohydrates, protein:val_meat.protein, fat:val_meat.fats,  calories:val_meat.Total_Calories, requiredCarbs:carbs, requiredProtein:protein, requiredFat:fat, goals:val.goals});
+                                    // array_food_To_Eat.push({meal_at1:val1.time_of_day,  name1:val_meat.name, carbs1:carbs, protein1:protein,  fat1:fat });
+                                  }
+                                })
+                              }
+                            }else {
+                              $.each(data[0], function (f, val_fruits) {
+                                if (val1.fruits == val_fruits.id) {
+                                  array_food.push({id:array_food_id, meal_at:val1.time_of_day, name:val_fruits.name, carbs:val_fruits.carbohydrates, protein:val_fruits.protein, fat:val_fruits.fats, calories:val_fruits.Total_Calories, requiredCarbs:carbs, requiredProtein:protein, requiredFat:fat, goals:val.goals});
+                                  // array_food_To_Eat.push({meal_at1:val1.time_of_day,  name1:val_fruits.name, carbs1:carbs,  protein1:protein,  fat1:fat});
+                                }
+                              })
+                            }
+                            array_food_id=array_food_id+1;
+
+                          })
+                          function howMuchFood() {
+                            $.each(array_food, function (i,values) {
+                              values.carbs=parseFloat(values.carbs);
+                              values.requiredCarbs=parseFloat(values.requiredCarbs);
+                              carbsToEat =  values.requiredCarbs / values.carbs ;
+                              values.protein=parseFloat(values.protein);
+                              values.requiredProtein=parseFloat(values.requiredProtein);
+                              proteinToEat =  values.requiredCarbs / values.carbs ;
+                              values.fat=parseFloat(values.fat);
+                              values.requiredFat=parseFloat(values.requiredFat);
+                              fatToEat =  values.requiredCarbs / values.carbs ;
+                              // array_food.push(carbsToEat:carbsToEat, proteinToEat:proteinToEat, fatToEat:fatToEat)
+                            })
+                          }
+                          // console.log("howMuchFood");
+                          howMuchFood();
+
+                          count = 0;
+                          $.each(array_food, function (i,value) {
+                            // count+=1;
+                            $("#fav-dataTables").append(`
+                              <tr id="addFavl`+value.id+`" onclick="add_to_fav('${value.id}', '${value.name}', ${user_id}, '${value.goals}', '${value.calories}', '${value.meal_at}', '${value.carbs}', '${value.protein}', '${value.fat}', '${value.requiredCarbs}', '${value.requiredProtein}', '${value.requiredFat}')">
+
+                              <td>${value.name}</td>
+                              <td>${value.meal_at}</td>
+                              <td>${value.carbs}</td>
+                              <td style="color:#0415f9">${value.requiredCarbs}</td>
+                              <td>${value.protein}</td>
+                              <td style="color:#0415f9">${value.requiredProtein}</td>
+                              <td>${value.fat}</td>
+                              <td style="color:#0415f9">${value.requiredFat}</td>
+                              </tr>
+                              `)
+                              // if (count =  value.id) {
+                                $.each(data[6], function (i, user_pref) {
+                                  if (user_pref.user == user_id && user_pref.favMealsID==value.id) {
+                                    $("#addFavl"+value.id).addClass("addFav");
+                                  }
+                                  // console.log(user_pref.goals);
+
+                                  if (value.goals==user_pref.goals || value.id == user_pref.id) {
+                                        $("#Suggested-dataTables").append(`
+                                          <tr>
+                                          <td>${user_pref.name}</td>
+                                          <td>${user_pref.meal_at}</td>
+                                          <td>${user_pref.calories}</td>
+                                          <td>${user_pref.carbs}</td>
+                                          <td>${user_pref.requiredCarbs}</td>
+                                          <td>${user_pref.protein}</td>
+                                          <td>${user_pref.requiredProtein}</td>
+                                          <td>${user_pref.fat}</td>
+                                          <td>${user_pref.requiredFat}</td>
+                                          </tr>
+                                          `)
+                                    }
+
+                                  })
+                              // }
+                            })
+                            // $.each(data[], function (i, pref) {
+                            //   $("#pref-dataTables").append(`
+                            //
+                            //     `)
+                            // })
+
+                            // console.log(user);
+                        }else {
+                          // $("#changeDetails-btn").css({"display":"none"});
+                        }
+                })
+
+                // Data Table Js
+                $('.dataTables-example2').DataTable({
+                  responsive: true
+                });
+                // End Of Data Table Js
+              },error: function(fulldata){console.log(fulldata);}
+          })
+          // calrs/day  = 66.67+(13.75*w)+(5*h)-(6.76*age)
+                                    // console.log(bmi);
+
+
+
+      // Adding Preferences Meals
+  function add_to_fav(id, name, user, goals,calories, meal_at, carbs, protein, fat, requiredCarbs, requiredProtein, requiredFat){
+    // alert(id+"  name "+name);
+    var formdata = new FormData;
+    formdata.append("name", name);
+    formdata.append("calories", calories);
+    formdata.append("meal_at", meal_at);
+    formdata.append("carbs", carbs);
+    formdata.append("protein", protein);
+    formdata.append("fat", fat);
+    formdata.append("requiredCarbs", requiredCarbs);
+    formdata.append("requiredProtein", requiredProtein);
+    formdata.append("requiredFat", requiredFat);
+    formdata.append("user", user_id);
+    formdata.append("favMealsID", id);
+    formdata.append("class", 'addFav');
+    formdata.append("goals", goals);
+    // $.each(array_food, function (k, valK) {
+    //   // console.log(formdata);
+    // })
+    // console.log(formdata);
+    // console.log(id+"  "+name+"  "+user);
+    if ($("#addFavl"+id).hasClass("addFav") ) {
+      var post = "delete";
+      formdata.append('post',post);
+      $("#addFavl"+id).removeClass("addFav");
+      $.ajax({
+          url: 'php/postDelPreferences.php ',
+          method: 'post',
+          processData:false,
+          contentType:false,
+          data: formdata,
+          success: function(data){
+            console.log(data);
+          },error: function(data){console.log(data);}
+      })
+    }else {
+      var post = "insert";
+      formdata.append('post',post);
+      $("#addFavl"+id).addClass("addFav");
+        $.ajax({
+            url: 'php/postDelPreferences.php ',
+            method: 'post',
+            processData:false,
+            contentType:false,
+            data:formdata,
+            success: function(data){
+              console.log(data);
+            },error: function(data){console.log(data);}
+        })
+      $("#item_fav").html(name);
+      $("#food_id").val(id);
+      $("#user_id").val(user_id);
+      // $("#food_type").val(array);
+      console.log(array_food);
+    }
+
+  }
+
+
+        </script>
+
+    </body>
+</html>
